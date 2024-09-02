@@ -7,6 +7,12 @@ This repository contains a collection of resources for frontend developers prepa
 - [Basics Setup](#basics-setup)
   - [Project Setup](#project-setup)
 - [Web Fundamentals](#web-fundamentals)
+  - [HTML](#html)
+  - [CSS](#css)
+    - [CSS Properties](#css-properties)
+  - [JavaScript](#javascript)
+    - [DOM Properties](#dom-properties)
+  - [Project 1 - Create a simple calculator](#simple-calculator)
 - [Frontend Frameworks/Libraries](#frontend-frameworks-libraries)
   - [Tailwind CSS](#tailwind-css)
   - [Shadcn/UI tailwind CSS Library](#shadcnui-tailwind-css-library)
@@ -146,6 +152,121 @@ After installing the above tools, you need to set up a project to start with fro
 [Back to Top](#table-of-contents)
 
 # Web Fundamentals
+
+Before you start with frontend development, you need to understand the basics of web development. Here are some of the fundamentals of web development:
+
+### HTML
+
+- HTML stands for `HyperText Markup Language`.
+- It is the standard markup language for creating web pages.
+- It describes the structure of web pages using markup.
+
+[Back to Top](#table-of-contents)
+
+### CSS
+
+- CSS stands for `Cascading Style Sheets`.
+- It describes how HTML elements are to be displayed on the screen.
+- It is used to style the layout of web pages.
+
+### CSS Properties
+
+- `box-shadow`: adds shadow to an element.
+
+  ```css
+  box-shadow: 10px 10px 5px grey; /* horizontal offset, vertical offset, blur radius/spread, color */
+  ```
+
+- `backdrop-filter`: applies a filter to the backdrop of the element.
+
+  ```css
+  backdrop-filter: blur(10px); /* applies a blur effect to the backdrop */
+  ```
+
+- `display`: specifies the display behavior of an element.
+
+  ```css
+  display: block; /* displays an element as a block element */
+  display: inline; /* displays an element as an inline element */
+  display: inline-block; /* displays an element as an inline-level block container */
+  display: none; /* hides an element */
+  ```
+
+- `grid`: a layout system that consists of columns and rows.
+
+  ```css
+  display: grid; /* displays an element as a grid container */
+  grid-template-columns: 100px 100px 100px; /* defines the columns of the grid */
+  grid-template-rows: 100px 100px 100px; /* defines the rows of the grid */
+  ```
+
+- `grid-column/row`: specifies the grid lines on which an item will be placed.
+
+  ```css
+  grid-column: 1 / 3; /* places an item from column line 1 to column line 3 */
+  grid-row: 1 / 3; /* places an item from row line 1 to row line 3 */
+  ```
+
+[Back to Top](#table-of-contents)
+
+### JavaScript
+
+- JavaScript is a `high-level programming language`.
+- It is used to make web pages interactive.
+- It is used to create dynamic content on web pages.
+
+### DOM Properties
+
+- `innerText`: sets or returns the text content of an element.
+
+  - focuses on the rendered text content (visible text) of an element.
+
+  ```javascript
+  document.getElementById("demo").innerText = "Hello, World!";
+  ```
+
+- `innerHTML`: sets or returns the HTML content of an element.
+
+  - focuses on the HTML content (including tags) of an element.
+
+  ```javascript
+  document.getElementById("demo").innerHTML = "<h1>Hello, World!</h1>";
+  ```
+
+- `textContent`: sets or returns the text content of an element.
+
+  - ignores all HTML tags and returns only the text.
+
+  ```javascript
+  document.getElementById("demo").textContent = "Hello, World!";
+  ```
+
+  | innerText                                                                        | textContent                                                                                                          |
+  | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+  | reads text rendered on the screen                                                | reads text as it is in the markup                                                                                    |
+  | returns the content rendered on the screen                                       | returns the content as it is in the markup                                                                           |
+  | ignores all the HTML tags and the hidden element (display: none)                 | returns the content as it is in the markup but does not consider the style and returns text even though it is hidden |
+  | ignores html markup, but recognizes formatting like line breaks and white spaces | ignores markup, line breaks, and white spaces, and all text is printed on same line                                  |
+
+  [Back to Top](#table-of-contents)
+
+  ### String Methods
+
+  - `slice()`: extracts a part of a string and returns a new string.
+
+    - StartIndex: The position where to begin the extraction. First character is at index 0. If negative, it is treated as str.length + StartIndex. it includes the character at this position.
+    - EndIndex: The position where to end the extraction. The character at this position will not be included.
+
+    ```javascript
+    let str = "Hello, World!";
+    let res = str.slice(7, 12); // returns "World"
+    ```
+
+[Back to Top](#table-of-contents)
+
+### Simple Calculator
+
+- learn HTML, CSS, and JavaScript by creating a simple calculator.
 
 [Back to Top](#table-of-contents)
 
@@ -289,6 +410,14 @@ After installing the above tools, you need to set up a project to start with fro
 
 # Resources
 
+- [Node.js](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Git](https://git-scm.com/)
+- [Chrome Browser](https://www.google.com/chrome/)
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Vite.js](https://vitejs.dev/guide/)
 - [Tailwind CSS installation in VITE.js](https://tailwindcss.com/docs/guides/vite)
 - [Shadcn/UI tailwind CSS Library](https://ui.shadcn.com/docs/installation)
