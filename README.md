@@ -230,6 +230,8 @@ Before you start with frontend development, you need to understand the basics of
 
 #### DOM Properties
 
+- `querySelector`: access element based on class name.
+
 - `innerText`: sets or returns the text content of an element.
 
   - focuses on the rendered text content (visible text) of an element.
