@@ -445,6 +445,10 @@ Before you start with frontend development, you need to understand the basics of
   - O(n!): factorial time complexity.
     <img src="/src/assets/big-o-face.png" alt="Big O Face" width="200" height="200" />
 
+<summary>
+
+</summary>
+
 #### Big O Notation
 
 - way to categorize the efficiency of an algorithm (time or memory requirements based on the input size).
