@@ -32,7 +32,13 @@ This repository contains a collection of resources for frontend developers prepa
     - [Arrays](#arrays)
 - [Resources](#resources)
 
+<details>
+
+<summary>
+
 # Basics Setup
+
+</summary>
 
 Before you start with the frontend development, you need to set up your environment. Here are some of the tools you need to install:
 
@@ -89,7 +95,13 @@ Before you start with the frontend development, you need to set up your environm
 
 [Back to Top](#table-of-contents)
 
+<details>
+
+<summary>
+
 ### Project Setup
+
+</summary>
 
 After installing the above tools, you need to set up a project to start with frontend development. Here are the steps to set up a project:
 
@@ -164,11 +176,27 @@ After installing the above tools, you need to set up a project to start with fro
 
 [Back to Top](#table-of-contents)
 
+</details>
+
+</details>
+
+<details>
+
+<summary>
+
 # Web Fundamentals
+
+</summary>
 
 Before you start with frontend development, you need to understand the basics of web development. Here are some of the fundamentals of web development:
 
+<details>
+
+<summary>
+
 ### HTML
+
+</summary>
 
 - HTML stands for `HyperText Markup Language`.
 - It is the standard markup language for creating web pages.
@@ -176,7 +204,15 @@ Before you start with frontend development, you need to understand the basics of
 
 [Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### CSS
+
+</summary>
 
 - CSS stands for `Cascading Style Sheets`.
 - It describes how HTML elements are to be displayed on the screen.
@@ -222,7 +258,15 @@ Before you start with frontend development, you need to understand the basics of
 
 [Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### JavaScript
+
+</summary>
 
 - JavaScript is a `high-level programming language`.
 - It is used to make web pages interactive.
@@ -279,13 +323,31 @@ Before you start with frontend development, you need to understand the basics of
 
 [Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### Simple Calculator
+
+</summary>
 
 - learn HTML, CSS, and JavaScript by creating a simple calculator.
 
 [Back to Top](#table-of-contents)
 
+</details>
+
+</details>
+
+<details>
+
+<summary>
+
 # Frontend Frameworks Libraries
+
+</summary>
 
 ### Vite.js
 
@@ -423,6 +485,8 @@ Before you start with frontend development, you need to understand the basics of
 
 [Back to Top](#table-of-contents)
 
+</details>
+
 <details>
 <summary>
 
@@ -447,11 +511,13 @@ Before you start with frontend development, you need to understand the basics of
   - O(n!): factorial time complexity.
     <img src="/src/assets/big-o-face.png" alt="Big O Face" width="200" height="200" />
 
+<details>
+
 <summary>
 
-</summary>
-
 #### Big O Notation
+
+</summary>
 
 - way to categorize the efficiency of an algorithm (time or memory requirements based on the input size).
 - not meant to be exact measurement
@@ -637,7 +703,15 @@ Before you start with frontend development, you need to understand the basics of
 
 [Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 #### Data Structures
+
+</summary>
 
 ##### Arrays
 
@@ -758,6 +832,8 @@ Before you start with frontend development, you need to understand the basics of
 </details>
 
 [Back to Top](#table-of-contents)
+
+</details>
 
 # Resources
 
