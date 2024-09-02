@@ -30,15 +30,21 @@ This repository contains a collection of resources for frontend developers prepa
     - [O(N!)](#on)
   - [Data Structures](#data-structures)
     - [Arrays](#arrays)
+- [Blockchain](#blockchain)
+  - [Smart Contract Blockchains: Decentralizing Code Execution](#smart-contract-blockchains-decentralizing-code-execution)
+  - [Week 1 - Cryptography Fundamentals](#week-1-cryptography-fundamentals)
+  - [Day 2: Cryptographic hashes SHA-256](#day-2-cryptographic-hashes-sha-256)
+  - [Consensus Mechanisms](#consensus-mechanisms)
+  - [Symmetric Cryptography vs Asymmetric Cryptography](#symmetric-cryptography-vs-asymmetric-cryptography)
+  - [Public Key Cryptography](#public-key-cryptography)
+    - [Digital Signatures](#digital-signatures)
+    - [Encryption](#encryption)
+  - [Algorithms](#algorithms)
+    - [RSA](#rsa)
+    - [ECDSA](#ecdsa)
 - [Resources](#resources)
 
-<details>
-
-<summary>
-
 # Basics Setup
-
-</summary>
 
 Before you start with the frontend development, you need to set up your environment. Here are some of the tools you need to install:
 
@@ -95,13 +101,7 @@ Before you start with the frontend development, you need to set up your environm
 
 [Back to Top](#table-of-contents)
 
-<details>
-
-<summary>
-
 ### Project Setup
-
-</summary>
 
 After installing the above tools, you need to set up a project to start with frontend development. Here are the steps to set up a project:
 
@@ -176,27 +176,13 @@ After installing the above tools, you need to set up a project to start with fro
 
 [Back to Top](#table-of-contents)
 
-</details>
-
-</details>
-
-<details>
-
-<summary>
+<hr />
 
 # Web Fundamentals
 
-</summary>
-
 Before you start with frontend development, you need to understand the basics of web development. Here are some of the fundamentals of web development:
 
-<details>
-
-<summary>
-
 ### HTML
-
-</summary>
 
 - HTML stands for `HyperText Markup Language`.
 - It is the standard markup language for creating web pages.
@@ -204,15 +190,9 @@ Before you start with frontend development, you need to understand the basics of
 
 [Back to Top](#table-of-contents)
 
-</details>
-
-<details>
-
-<summary>
+<hr />
 
 ### CSS
-
-</summary>
 
 - CSS stands for `Cascading Style Sheets`.
 - It describes how HTML elements are to be displayed on the screen.
@@ -258,15 +238,9 @@ Before you start with frontend development, you need to understand the basics of
 
 [Back to Top](#table-of-contents)
 
-</details>
-
-<details>
-
-<summary>
+<hr />
 
 ### JavaScript
-
-</summary>
 
 - JavaScript is a `high-level programming language`.
 - It is used to make web pages interactive.
@@ -323,31 +297,15 @@ Before you start with frontend development, you need to understand the basics of
 
 [Back to Top](#table-of-contents)
 
-</details>
-
-<details>
-
-<summary>
-
 ### Simple Calculator
-
-</summary>
 
 - learn HTML, CSS, and JavaScript by creating a simple calculator.
 
 [Back to Top](#table-of-contents)
 
-</details>
-
-</details>
-
-<details>
-
-<summary>
+<hr />
 
 # Frontend Frameworks Libraries
-
-</summary>
 
 ### Vite.js
 
@@ -485,14 +443,7 @@ Before you start with frontend development, you need to understand the basics of
 
 [Back to Top](#table-of-contents)
 
-</details>
-
-<details>
-<summary>
-
 # Data Structures and Algorithms
-
-</summary>
 
 - Data Structures and Algorithms are the building blocks of software development.
 - They help in solving complex problems efficiently.
@@ -511,13 +462,7 @@ Before you start with frontend development, you need to understand the basics of
   - O(n!): factorial time complexity.
     <img src="/src/assets/big-o-face.png" alt="Big O Face" width="200" height="200" />
 
-<details>
-
-<summary>
-
 #### Big O Notation
-
-</summary>
 
 - way to categorize the efficiency of an algorithm (time or memory requirements based on the input size).
 - not meant to be exact measurement
@@ -703,15 +648,7 @@ Before you start with frontend development, you need to understand the basics of
 
 [Back to Top](#table-of-contents)
 
-</details>
-
-<details>
-
-<summary>
-
 #### Data Structures
-
-</summary>
 
 ##### Arrays
 
@@ -829,11 +766,321 @@ Before you start with frontend development, you need to understand the basics of
     console.log(arr); // Output: [10, 20, 40, 50]
     ```
 
-</details>
+[Back to Top](#table-of-contents)
+
+# Blockchain
+
+- What is the purpose of blockchain?
+
+  - a decentralized, distributed ledger that records transactions across many computers.
+  - allows a network of computers to agree on a common state of data without the need for a central authority.
+
+- What is the key goal of blockchain?
+  - decentralization: anyone can participate in the network and help secure it.
+  - immutability: once data is written/added to the blockchain, it cannot be changed/altered.
+  - transparency: all transactions are visible/recorded to everyone on the network/public ledger.
+
+> `this system enables trust among participants ensuring that no single entity can control over the data instead consensus mechanisms are used to agree on the state of the network`
+
+- Why is blockchain needed for cryptocurrencies?
+
+  - trust: Bishal and Suman trust the blockchain network.
+  - time: blockchain is faster than banks.
+  - fees: blockchain fees are lower than banks.
+  - privacy/trust/transparency: blockchain is transparent.
+  - censorship: blockchain is censorship-resistant.
+  - security: blockchain is secure.
+  - control: blockchain is decentralized.
+  - corruption: blockchain is trustless.
+  - centralization: blockchain is decentralized.
+  - immutability: blockchain is immutable.
+  - consensus: blockchain uses consensus mechanisms.
+
+  ```js
+  /** Why is blockchain needed for cryptocurrencies?
+   *   Bishal ----------(bank transfer of 10)------------------> Suman
+   *    - trust: Bishal and Suman trust the bank to transfer the money
+   *    - time: bank takes time to process the transaction
+   *    - fees: bank charges fees for the transaction
+   *    - privacy/trust: bank knows about the transaction
+   *    - censorship: bank can block the transaction
+   *    - security: bank can be hacked
+   *    - control: bank can freeze the account
+   *    - centralization: bank controls the money
+   *    - corruption: bank can be corrupt
+   *
+   *  Bishal ----------(cryptocurrency transfer of 10)------------------> Suman
+   *    - trust: Bishal and Suman trust the blockchain network
+   *    - time: blockchain is faster than banks
+   *    - fees: blockchain fees are lower than banks
+   *    - privacy/trust/transparency: blockchain is transparent
+   *    - censorship: blockchain is censorship-resistant
+   *    - security: blockchain is secure
+   *    - control: blockchain is decentralized
+   *    - corruption: blockchain is trustless
+   *    - centralization: blockchain is decentralized
+   *    - immutability: blockchain is immutable
+   *    - consensus: blockchain uses consensus mechanisms
+   */
+  ```
+
+- How does blockchain work?
+
+  - security (proof of work, proof of stake, etc.)
+  - public/private key cryptography (authentication, encryption, etc.)
+  - linked data structures (blocks, transactions, chronology etc.)
+  - peer-to-peer network (nodes, miners, permissionless, etc.)
+  - blockchain is a chain of blocks, each block contains a list of transactions.
+  - block: a group of transactions that are bundled together and added to the blockchain.
+  - transaction: a transfer of value between two parties.
+  - block header: contains metadata about the block (hash of the block, hash of the previous block, timestamp, etc.).
+  - hash: a unique fingerprint of data that is used to secure the blockchain.
+  - mining/mining rewards (financial incentives): the process of adding new blocks to the blockchain by solving complex mathematical puzzles.
+  - consensus: the process by which the network agrees on the state of the blockchain.
+  - nodes: computers that participate in the blockchain network.
+  - full nodes: store the entire blockchain and validate transactions.
+
+```
+- transactions are verified and recorded by network of nodes using cryptographic principles (making system trustless and scalable).
+- breakthrough in 2008, Bitcoin whitepaper by Satoshi Nakamoto.
+```
 
 [Back to Top](#table-of-contents)
 
-</details>
+#### Smart Contract Blockchains: Decentralizing Code Execution
+
+- Ethereum, the first smart contract blockchain.
+- allow developers to write/deploy code that runs on the blockchain/decentralized network.
+- code is immutable, transparent, and trustless.
+- execution of code is not controlled by any single entity (censorship-resistant, transparently verifiable).
+
+- Example: a simple solidity smart contract
+
+  - a simple smart contract that stores a message.
+  - anyone can read the message.
+  - only the owner can update the message.
+  - the contract is immutable and trustless.
+  - the contract is deployed on the Ethereum blockchain.
+  - the contract is transparent and verifiable.
+  - the contract is censorship-resistant, decentralized, and secure.
+
+  ```js
+  contract SimpleStorage {
+    string message;
+    address owner;
+
+    constructor() {
+      owner = msg.sender;
+    }
+
+    function setMessage(string memory newMessage) public {
+      require(msg.sender == owner, "Only the owner can update the message");
+      message = newMessage;
+    }
+
+    function getMessage() public view returns (string memory) {
+      return message;
+    }
+  }
+  ```
+
+#### Week 1: Cryptography Fundamentals
+
+Cryptography is the art and science of securing communication so that only the intended recipients can understand the message. Historically, it focused on creating systems to encrypt messages, making them unreadable to anyone but the intended recipient. The study of cryptography began with simple methods like Caesar ciphers and evolved to more complex systems.
+
+- Understanding Cryptography Hash Functions: The building blocks of blockchain
+
+  - What are Hash Functions?
+  - What makes Hash Functions Secure and special?
+
+    - Hash functions are mathematical functions that take an input and produce a fixed-size output.
+    - usually represented as a hexadecimal string or string of characters.
+    - deterministic: same input always produces the same output/hash.
+    - fast to compute: can quickly compute the hash of an input.
+    - one-way: difficult to reverse-engineer the input from the output.
+    - collision-resistant: unlikely for two different inputs (size) to produce the same output (hash collision).
+    - secure: used in blockchain to secure transactions and blocks.
+    - pseudorandom: hash functions appear random but are deterministic or Even a small change in the input results in a completely different hash.
+
+    | Input         | Input size    | output hash | output size |
+    | ------------- | ------------- | ----------- | ----------- |
+    | 52            | 8 bytes       | 7f9b1fb3    | 32 bytes    |
+    | "happy times" | 22 bytes      | 3d3f2bf3    | 32 bytes    |
+    | bishal.jpg    | 875,000 bytes | 9a3b4c5d    | 32 bytes    |
+    | series.mp4    | 1.6e+10 bytes | 1a2b3c4d    | 32 bytes    |
+
+    - Why are Hash Functions used/important in Blockchain?
+
+      - secure transactions/security: hash functions secure transactions by creating a unique fingerprint of the data.
+      - data integrity: hash functions ensure data integrity by verifying the data has not been tampered with (hash of data) == (hash of data).
+
+> tool: https://emn178.github.io/online-tools/sha256
+
+[Back to Top](#table-of-contents)
+
+#### Day 2: Cryptographic hashes SHA-256
+
+- SHA-256 hashing (Secure Hash Algorithm 256-bit)
+- a cryptographic hash function that produces a 256-bit (32-byte)/(a fixed-size hash) hash value from any input data.
+- one-way hash function: cannot be decrypted back to the original input.
+
+- Challenge: Hashing Data - create and compare SHA256 hashes using [ethereum-crypto](https://github.com/ethereum/js-ethereum-cryptography)
+
+- Brute Force Hashing or Brute force attack: trying all possible combinations of input to find the correct hash
+- hash cracking: trying all possible inputs to find the correct hash
+- hash collision: finding two different inputs that produce the same hash
+- rainbow tables: precomputed hash values for common inputs
+
+  - table which maps common inputs to their hash output.
+
+  | Common input/passwords | Hash output/sha256 hash |
+  | ---------------------- | ----------------------- |
+  | password               | 5e884dsf...ef721d1542d8 |
+  | 123456                 | 7c4a8d09....f4c2f70e9f8 |
+
+  ```
+     - To protect against these attacks, it's common to add a salt to the input before hashing.
+     - A salt is a random value that makes the resulting hash unique, even if the input is common.
+     - Salting: Adding a random value to inputs before hashing to prevent attacks like rainbow table lookups.
+  ```
+
+#### Consensus Mechanisms
+
+- What are Consensus Mechanisms?
+- Common Consensus Mechanisms
+
+  - Proof of Work (PoW)
+  - Proof of Stake (PoS)
+  - Practical Byzantine Fault Tolerance (PBFT)
+  - Delegated Proof of Stake (DPoS)
+
+- Secure Public-Private Key Server
+
+  - Create a basic server that securely generates, stores, and serves public-private key pairs.
+    - Generate a public-private key pair (e.g. RSA or ECDSA).
+    - securely store the private key.
+    - create APIs to serve the public key to clients.
+
+[Back to Top](#table-of-contents)
+
+#### Symmetric Cryptography vs Asymmetric Cryptography
+
+| Symmetric Cryptography                          | Asymmetric (PUBLIC KEY)                                  |
+| ----------------------------------------------- | -------------------------------------------------------- |
+| same key for encryption and decryption          | public key for encryption and private key for decryption |
+| effective but requires secure key (challenging) | secure without needing to share the key                  |
+| downside: both sides must have key beforehand   | -------                                                  |
+| key: 324, Message: Cat, Encryp: FCX             | -----                                                    |
+| Advanced Encryption Standard                    | ----                                                     |
+
+#### Public Key Cryptography
+
+- 1976, Whitfield Diffie > public key cryptography > asymmetric encryption
+- secure communication without prior key exchange
+- Diffie, Martin Hellman, Ralph Merkle > Diffie-Hellman key exchange (modern public key cryptography)
+
+- Public Key Cryptography: How it works
+
+      ```bash
+      Bob -- (public key) --> anyone can encrypt a message for Bob
+      Bob -- (private key) --> only Bob can decrypt the message or he can only read the message
+      Bob -- (private key) --> can sign a message to prove it came from Bob
+      Bob -- (public key) --> anyone can verify the signature using Bob's public key (proving it came from Bob)
+      ```
+
+  - Alice and Bob want to communicate securely.
+  - Alice generates a public-private key pair.
+  - Alice shares her public key with Bob.
+  - Bob encrypts a message using Alice's public key.
+  - Alice decrypts the message using her private key.
+
+#### Public Key Cryptography in Practice
+
+##### Digital Signatures
+
+- ensures messages's integrity and authenticity
+  Bob --- (private key) ---> signs a message -- (Bob's public key) --> anyone can verify the signature using Bob's public key'
+
+##### Encryption
+
+Bob's public key can be used to encrypt a message that only Bob's private key can decrypt, ensuring confidentiality.
+
+[Back to Top](#table-of-contents)
+
+### Algorithms
+
+##### RSA
+
+- Rivest-Shamir-Adleman
+- based on the mathematical difficulty of factoring large prime numbers.
+- used for secure data transmission but requires larger key sizes for strong security.
+
+##### ECDSA
+
+- Elliptic Curve Digital Signature Algorithm
+- uses elliptic curves to achieve the same security level as RSA but with smaller keys, making it more efficient and popular in modern applications like Bitcoin.
+
+[Back to Top](#table-of-contents)
+
+```js
+/**
+ *  - Consensus Mechanisms
+ *    - What are Consensus Mechanisms?
+ *    - Common Consensus Mechanisms
+ *      - Proof of Work (PoW)
+ *      - Proof of Stake (PoS)
+ *      - Practical Byzantine Fault Tolerance (PBFT)
+ *      - Delegated Proof of Stake (DPoS)
+ *  - Secure Public-Private Key Server
+ *    - Create a basic server that securely generates, stores and serves public-private key pairs
+ *      - Generate a public-private key pair (e.g. RSA or ECDSA)
+ *      - securely store the private key
+ *      - createAPIs to serve the public key to clients
+ *
+ * Week 2 - Blockchain Data Structures
+ *  - Understanding Merkle Trees
+ *  - Understanding Patricia Tries
+ *  - Understanding Bloom Filters
+ *  - UTXO (Unspent Transaction Output) Model VS Account-based Model
+ *  - compare and contrast UTXO and Account-based models with examples
+ *  - start thinking about which model is better for which use case
+ *
+ * Week 3 - Ethereum Fundamentals
+ *  - Ethereum Node Basics
+ *    - Understanding Ethereum Nodes
+ *    - JSON-RPC API
+ *  - Building and testing requests to Ethereum Nodes
+ *  - Interacting with an Ethereum Node
+ *
+ * Week 4 - Smart Contracts and Solidity
+ *   - Understanding Smart Contracts fundamentals
+ *     - What are Smart Contracts?
+ *     - Solidity Basics
+ *
+ * Week 5 - Advanced Solidity
+ *   - contract inheritance, libraries, and types
+ *   - common vulnerabilities in Smart Contracts
+ *   - optimization techniques
+ *   - testing using Truffle and Hardhat
+ *
+ * Week 6 - Smart Contract Use Cases and Projects
+ *   - Use Cases
+ *     - Aave (DeFi - a decentralized lending platform)
+ *     - Uniswap (DeFi - a decentralized exchange protocol)
+ *     - Chainlink (DeFi - a decentralized oracle network)
+ *   - Projects
+ *     - brainstorming and sketching out a project idea
+ *     - focus on solving a real-world problem using smart contracts and decentralized applications
+ */
+
+/**
+ * es6 - ECMAScript 6
+ * - let, const - block scoped
+ * - var - function scoped
+ * - hoisting
+ * - temporal dead zone - TDZ: before the variable is declared
+ */
+```
 
 # Resources
 
@@ -850,9 +1097,9 @@ Before you start with frontend development, you need to understand the basics of
 - [Shadcn/UI tailwind CSS Library](https://ui.shadcn.com/docs/installation)
 - [Big O Cheatsheet - Data structures and Algorithms with thier complexities](https://www.hackerearth.com/practice/notes/big-o-cheatsheet-series-data-structures-and-algorithms-with-thier-complexities-1/)
 - [Data Structures and Algorithms](https://frontendmasters.com/courses/algorithms/)
+- [Cryptography](https://en.wikipedia.org/wiki/Cryptography#History_of_cryptography_and_cryptanalysis)
+- [P versus NP problem](https://en.wikipedia.org/wiki/P_versus_NP_problem)
+- [RSA (cryptosystem)](<https://en.wikipedia.org/wiki/RSA_(cryptosystem)>)
+- [Elliptic Curve Digital Signature Algorithm](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
 
 [Back to Top](#table-of-contents)
-
-```
-
-```
