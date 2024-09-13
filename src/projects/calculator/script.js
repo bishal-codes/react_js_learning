@@ -65,10 +65,11 @@ buttonsArray.forEach((button) => {
     if (operators.includes(buttonText)) {
       // 12.  store the last character of the displayValue
       lastOperator = buttonText;
-      console.log("lastOperator: ", lastOperator);
-      console.log(displayValue);
+      //   console.log("lastOperator: ", lastOperator);
+      console.log(displayValue.length, displayValue);
 
-      const lastCharacter = displayValue[displayValue.length - 1];
+      const lastCharacter = displayValue[displayValue.length - 1]; // 78+
+      console.log("lastCharacter: ", lastCharacter);
       if (operators.includes(lastCharacter)) {
         // if the last character is an operator, remove it
         displayValue = displayValue.slice(0, -1);

@@ -42,6 +42,8 @@ This repository contains a collection of resources for frontend developers prepa
   - [Algorithms](#algorithms)
     - [RSA](#rsa)
     - [ECDSA](#ecdsa)
+    - [Exercise Key to Address](#exercise-key-to-address)
+  - [Java](#java)
 - [Resources](#resources)
 
 # Basics Setup
@@ -204,6 +206,8 @@ Before you start with frontend development, you need to understand the basics of
 
   ```css
   box-shadow: 10px 10px 5px grey; /* horizontal offset, vertical offset, blur radius/spread, color */
+
+  box-shadow: 10px 10px 5px 0px grey; /* horizontal offset, vertical offset, blur radius, spread radius, color */
   ```
 
 - `backdrop-filter`: applies a filter to the backdrop of the element.
@@ -975,14 +979,26 @@ Cryptography is the art and science of securing communication so that only the i
 
 #### Public Key Cryptography
 
+- backbone of security in blockchain networks likr Bitcoin and Ethereum.
+- ensures secure communication and transactions (decenralized, trustless, secure).
+
 - 1976, Whitfield Diffie > public key cryptography > asymmetric encryption
 - secure communication without prior key exchange
 - Diffie, Martin Hellman, Ralph Merkle > Diffie-Hellman key exchange (modern public key cryptography)
 
+- derived from the mathematical properties of prime numbers and elliptic curves.
+- derived from private key using ECC (Elliptic Curve Cryptography)
+
+  - used by others to verify the signature of the transaction but can not be used to reverse-engineer the private key.
+
+  what is public key?
+
+  - cryptographic key that can be used by anyone to encrypt a message.
+
 - Public Key Cryptography: How it works
 
       ```bash
-      Bob -- (public key) --> anyone can encrypt a message for Bob
+      Bob ko (public key) use garerw --> anyone can encrypt a message for Bob
       Bob -- (private key) --> only Bob can decrypt the message or he can only read the message
       Bob -- (private key) --> can sign a message to prove it came from Bob
       Bob -- (public key) --> anyone can verify the signature using Bob's public key (proving it came from Bob)
@@ -994,16 +1010,26 @@ Cryptography is the art and science of securing communication so that only the i
   - Bob encrypts a message using Alice's public key.
   - Alice decrypts the message using her private key.
 
+- Private key: secret key, known only to the owner.
+  - a random 256-bit number (32 bytes) (e.g., 0x1234567890abcdef)
+  - used to `sign transactions`, `proving ownership of the account`.
+  - like a password that grants access to a users ethereum account.
+
 #### Public Key Cryptography in Practice
 
 ##### Digital Signatures
 
-- ensures messages's integrity and authenticity
-  Bob --- (private key) ---> signs a message -- (Bob's public key) --> anyone can verify the signature using Bob's public key'
+- ensures messages's integrity and authenticity (verifying the sender).
+  - Bob --- (private key) ---> signs a message -- (Bob's public key) --> anyone can verify the signature using Bob's public key'
 
 ##### Encryption
 
-Bob's public key can be used to encrypt a message that only Bob's private key can decrypt, ensuring confidentiality.
+- Protecting sensitive data in financial systems, ensuring confidentiality in messages or transactions.
+- Bob's public key can be used to encrypt a message that only Bob's private key can decrypt, ensuring confidentiality.
+
+##### Secure Communication
+
+- In HTTPS (web security), public key cryptography is used to establish a secure channel between a user and a server.
 
 [Back to Top](#table-of-contents)
 
@@ -1019,6 +1045,31 @@ Bob's public key can be used to encrypt a message that only Bob's private key ca
 
 - Elliptic Curve Digital Signature Algorithm
 - uses elliptic curves to achieve the same security level as RSA but with smaller keys, making it more efficient and popular in modern applications like Bitcoin.
+
+[Back to Top](#table-of-contents)
+
+#### Exercise Key to Address
+
+- public key: cryptographic key that can be used by anyone to encrypt a message.
+- address: a unique identifier that represents a user on the blockchain.
+
+- `address (sharing, interaction) > public key (verification, security) > private key (ownership, access)`
+
+- Bitcoin Transformation:
+
+  - Checksum and Base58 Encoding: Bitcoin addresses are derived from the public key, followed by a double hash (SHA-256 and RIPEMD-160). A checksum is added for error detection, and Base58 encoding is used to make the address shorter and more user-friendly.
+
+- Ethereum Transformation:
+
+  - Keccak Hash and Last 20 Bytes: In Ethereum, the transformation process is simpler:
+    - The public key is hashed using the Keccak-256 function.
+    - The last 20 bytes of this hash form the Ethereum address.
+
+- `In both Bitcoin and Ethereum, the public key is distinct from the address. This separation adds an extra layer of privacy and security. The public key is not immediately visible, so an attacker would need the private key to forge a signature. The address is a simplified representation used for sending and receiving transactions. In blockchain, addresses are easier to share and interact with, while public keys are used for verification and security.`
+
+- keccak hash function:
+  - cryptographic hash function that converts an input (of any length) into a fixed-size output (256 bits).
+  - used in Ethereum to hash the public key and generate the address.
 
 [Back to Top](#table-of-contents)
 
@@ -1082,6 +1133,16 @@ Bob's public key can be used to encrypt a message that only Bob's private key ca
  */
 ```
 
+[Back to Top](#table-of-contents)
+
+# Java
+
+- History of Java
+  - Oak (1991) by James Gosling
+  - Java 1.0 (1995)
+  - C-like notation, object-oriented, platform-independent, secure, robust, and high-performance language
+  - Write Once, Run Anywhere (WORA)
+
 # Resources
 
 - [Node.js](https://nodejs.org/en/)
@@ -1103,3 +1164,6 @@ Bob's public key can be used to encrypt a message that only Bob's private key ca
 - [Elliptic Curve Digital Signature Algorithm](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
 
 [Back to Top](#table-of-contents)
+
+an education and migration consultancy based in Sydney. offer all education and visa-related services such as college/university enrolment, career counselling, visa consultation and processing, AAT representation and Ministerial Intervention requests and so on. Engaging us means you will be guided with a highly experienced and qualified professional team at every step of your journey to Australian education and permanent residency.
+At Navigate Visa and Education, very concerned about your future. Having gone through a similar life journey, understand the grievances of international students and the wider migrant community. share a common bond and similar sentiments. You will be handled by a highly professional and qualified team with a proven track record of excellent customer service.

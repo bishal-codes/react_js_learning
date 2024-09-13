@@ -4,7 +4,7 @@ global.TextDecoder = TextDecoder;
 
 import { toHex, utf8ToBytes } from "ethereum-cryptography/utils";
 import { sha256 } from "ethereum-cryptography/sha256";
-import findColor from "../../eth-blochchain/crypto-hashes/brute-force-hash.js";
+import findColor from "../../crypto-hashes/brute-force-hash";
 
 describe("find color of input hash", () => {
   const colors = [
