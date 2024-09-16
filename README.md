@@ -18,6 +18,10 @@ This repository contains a collection of resources for frontend developers prepa
   - [Tailwind CSS](#tailwind-css)
   - [Shadcn/UI tailwind CSS Library](#shadcnui-tailwind-css-library)
 - [Frontend Tools (Build Tools, Package Managers, etc.)](#frontend-tools)
+- [Software Development Life Cycle](#sdlc)
+  - [Waterfall Model - Software Development Life Cycle](#waterfall-model)
+  - [Agile Model - Software Development Life Cycle](#agile-model)
+- [Architecture](#architecture)
 - [Data Structures and Algorithms](#data-structures-and-algorithms)
   - [Big O Notation](#big-o-notation)
     - [O(1)](#o1)
@@ -309,7 +313,154 @@ Before you start with frontend development, you need to understand the basics of
 
 <hr />
 
-# Frontend Frameworks Libraries
+# Frontend Tools
+
+# SDLC
+
+- Software Development Life Cycle (SDLC)
+- a process used by software development teams to design, develop, and test high-quality software.
+
+<img src="./public/sdlc.gif" alt="SDLC" width="500" height="300" />
+
+# Waterfall Model
+
+- traditional and phase based approach
+- The Waterfall Model is a traditional, linear and sequential approach to software development.
+- Think of it like a straight line with clearly defined stages.
+- Each stage (like Requirements, Design, Implementation, Testing, and Maintenance) must be completed before moving to the next one. Once you finish a step, you can’t go back easily.
+- Example: First, you gather all requirements, then you design the system, and once the design is fixed, you move on to coding, etc.
+- It consists of a series of phases that help in the development of software applications.
+- In the industry, you may find Waterfall in older or more traditional companies, but it’s becoming less common because it lacks flexibility.
+  - Requirements Gathering
+  - Planning
+  - Design
+  - Development
+  - Testing
+  - Deployment
+  - Maintenance
+- Requirements Gathering
+  - defined by Project/Product Manager, Business Analyst, and Stakeholders.
+  - In start-up companies, the CEO or CTO may also be involved in defining the requirements.
+  - the first phase of the SDLC.
+  - involves gathering and documenting the requirements of the software application.
+  - the requirements are gathered from stakeholders, users, and customers.
+  - Planning
+  - PM along with designers work together to plan the project.
+  - The project manager creates a project plan that includes the scope, timeline, budget, and resources required for the project.
+- Design
+  - defined by the Solution Architect, Technical Architect, and Designers. [Senior Engineer/Engineering Manager]
+  - the design phase of the SDLC.
+  - involves designing the architecture of the software application.
+  - the design phase includes creating the high-level design, low-level design, and database design of the software application.
+  - tech stack, architecture, and design patterns are decided in this phase.
+- Development
+  - defined by the Software Engineer, Frontend Engineer, Backend Engineer, and Full Stack Engineer. [SDE I, SDE II, SDE III]
+  - the development phase of the SDLC.
+  - involves writing the code for the software application.
+  - the development phase includes coding, testing, and debugging the software application.
+  - the developers write the code according to the design specifications.
+- Testing
+  - defined by the Quality Assurance Engineer, Test Engineer, and QA Lead. [QA Engineer, QA Lead, SDET]
+  - the testing phase of the SDLC.
+  - involves testing the software application to ensure that it meets the requirements.
+  - the testing phase includes unit testing, integration testing, system testing, and user acceptance testing.
+  - the testers test the software application for bugs, errors, and defects.
+- Deployment
+  - defined by the DevOps Engineer, Site Reliability Engineer, and Deployment Engineer. [DevOps Engineer, SRE]
+  - the deployment phase of the SDLC.
+  - involves deploying the software application to the production environment.
+  - the deployment phase includes releasing the software application to the end-users.
+  - the deployment engineers deploy the software application to the production servers.
+- Maintenance
+  - defined by the Support Engineer, Maintenance Engineer, and Operations Engineer. [Support Engineer, Maintenance Engineer]
+  - the maintenance phase of the SDLC.
+  - involves maintaining and supporting the software application.
+  - the maintenance phase includes fixing bugs, adding new features, and updating the software application.
+  - the maintenance engineers provide support to the end-users and ensure that the software application is running smoothly.
+
+### Agile Model
+
+- modern and is all about iterations
+- Popular Agile frameworks in the industry include Scrum and Kanban.
+- The Agile Model is an modern, iterative and incremental approach to software development.
+- Instead of doing everything step by step, Agile breaks down the project into smaller pieces called sprints or iterations (usually 2-4 weeks).
+- In each sprint, a small part of the project is designed, developed, and tested.
+  <img src="./public/scrum-process-canvas.webp" alt="Agile Model + Scrum" width="500" height="300" />
+- Example: You gather some requirements, design a small part of the system, build it, test it, get feedback, and repeat the process for the next piece.
+- Most modern software companies, especially tech startups and even large enterprises like Google, Amazon, and Microsoft, use Agile.
+- Agile is more flexible and allows for changes and improvements along the way.
+- Agile is better suited for projects with changing requirements, where the customer is involved throughout the project, and where collaboration between teams is important.
+
+<img src="./public/kanban-workflow-system.png" alt="Kanban Workflow System" width="500" height="300" />
+
+| Waterfall Model                                              | Agile Model                                                                |
+| ------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| `linear and sequential approach`                             | `iterative and incremental approach`                                       |
+| `each stage must be completed before moving to the next one` | `breaks down the project into smaller pieces called sprints or iterations` |
+| `fixed scope, timeline, and budget`                          | `flexible scope, timeline, and budget`                                     |
+| `difficult to accommodate changes`                           | `easier to accommodate changes`                                            |
+| `less collaboration between teams`                           | `more collaboration between teams`                                         |
+| customer is involved at the beginning and end of the project | customer is involved throughout the project                                |
+| better for projects with fixed requirements                  | better for projects with changing requirements                             |
+| delivery at the end of the project                           | delivery at the end of each sprint                                         |
+| testing happens after the entire development is complete     | testing happens after each sprint                                          |
+
+[Back to Top](#table-of-contents)
+
+# Architecture
+
+1. Monolithic Architecture
+
+- a single-tiered software application in which different components combined into a single program from a single platform.
+- all the components of the application are combined into a single program.
+- backend, database, frontend, authentication, email services, analytics, etc., are all part of the same program.
+- scaling the application can be difficult as all the components are tightly coupled.
+  - Development speed is slower as the entire application needs to be developed, deployed, and scaled together.
+  - Code repository is a single repository.
+  - Scalability is difficult as all the components are tightly coupled.
+  - Single deployment for the entire application.
+  - if one component fails, the entire application fails.
+  - fault isolation is difficult as all the components are tightly coupled.
+  - single technology stack for the entire application.
+  - infrastructure cost is high as it requires a single server to run the entire application, also needs to be scaled up to handle the load.
+  - complexity is high as all the components are tightly coupled.
+  - testing in a monolithic application is complex
+
+2. Microservices Architecture
+
+- an architectural style that structures an application as a collection of loosely coupled services.
+- separate services for different components like authentication, email services, analytics, frontend, backend, database, etc.
+- each service is responsible for a specific task and can be developed, deployed, and scaled independently.
+  - development speed is faster as each service can be developed, deployed, and scaled independently.
+  - code repository is multiple repositories.
+  - scalability is easy as each service can be scaled independently.
+  - multiple deployments for different services.
+  - fault isolation is easy as each service is independent.
+  - multiple technology stacks for different services.
+  - infrastructure cost is low as each service can be scaled independently.
+  - complexity is low as each service is independent.
+
+| Monolithic Architecture              | Microservices Architecture               | Serverless Architecture                  |
+| ------------------------------------ | ---------------------------------------- | ---------------------------------------- |
+| `Development speed`: slower          | `Development speed`: faster              | `Development speed`: fast                |
+| `code repository`: single repository | `code repository`: multiple repositories | `code repository`: multiple repositories |
+| `scalability`: difficult to scale    | `scalability`: easy to scale             | `scalability`: easy to scale             |
+| `deployment`: single deployment      | `deployment`: multiple deployments       | `deployment`: multiple deployments       |
+| `technology stack`: single stack     | `technology stack`: multiple stacks      | `technology stack`: multiple stacks      |
+| `infrastructure cost`: high          | `infrastructure cost`: low               | `infrastructure cost`: low               |
+| `complexity`: high                   | `complexity`: low                        | `complexity`: low                        |
+| `fault isolation`: difficult         | `fault isolation`: easy                  | `fault isolation`: easy                  |
+| `testing`: complex                   | `testing`: easy                          | `testing`: easy                          |
+| `ownership`: single ownership        | `ownership`: multiple ownership          | `ownership`: multiple ownership          |
+| `maintenance`: complex               | `maintenance`: easy                      | `maintenance`: easy                      |
+| `rewamps`: complex                   | `rewamps`: easy                          | `rewamps`: easy                          |
+| `debugging`: complex                 | `debugging`: easy                        | `debugging`: easy                        |
+| `dev experience`: complex            | `dev experience`: easy                   | `dev experience`: easy                   |
+| `security`: complex                  | `security`: easy                         | `security`: easy                         |
+
+3. Serverless Architecture
+
+- a cloud computing execution model in which a cloud provider runs the server, and dynamically manages the allocation of machine resources.
 
 ### Vite.js
 
@@ -1017,7 +1168,7 @@ Cryptography is the art and science of securing communication so that only the i
 
 #### Public Key Cryptography in Practice
 
-##### Digital Signatures
+### Digital Signatures
 
 - ensures messages's integrity and authenticity (verifying the sender).
   - Bob --- (private key) ---> signs a message -- (Bob's public key) --> anyone can verify the signature using Bob's public key'
@@ -1035,41 +1186,66 @@ Cryptography is the art and science of securing communication so that only the i
 
 ### Algorithms
 
-##### RSA
+#### Bitcoin
+
+- uses the SHA-256 ([secp256k1](https://en.bitcoin.it/wiki/Secp256k1)) hash function to secure transactions and blocks.
+- Bitcoin chose Base 58 for it's addresses because this format removes commonly mistaken characters like zero "0" and upper-case o "O".
+
+#### Diffie-Hellman Key Exchange
+
+- a method for securely exchanging cryptographic keys over a public channel.
+- allows two parties to agree on a shared secret key without exchanging the key directly.
+- used in public key cryptography to establish a secure communication channel.
+- utilized in a hybrid cryptosystem since it uses asymmetric cryptography for the handshake and then symmetric cryptography for the message passing.
+
+- [Secret Key Exchange (Diffie-Hellman) ](https://www.youtube.com/watch?v=NmM9HA2MQGI)
+
+##### RSA (Rivest-Shamir-Adleman)
 
 - Rivest-Shamir-Adleman
 - based on the mathematical difficulty of factoring large prime numbers.
 - used for secure data transmission but requires larger key sizes for strong security.
 
+  ##### public key: (e, n) in RSA
+
+        - is a large number that is the product of two prime numbers (p and q), plus a smaller number
+
+  ##### private key: (d, n) in RSA
+
+        - is a large number that is the product of two prime numbers (p and q), plus a smaller number
+
 ##### ECDSA
+
+- [ECDSA: Elliptic Curve Signatures](https://cryptobook.nakov.com/digital-signatures/ecdsa-sign-verify-messages)
 
 - Elliptic Curve Digital Signature Algorithm
 - uses elliptic curves to achieve the same security level as RSA but with smaller keys, making it more efficient and popular in modern applications like Bitcoin.
 
-[Back to Top](#table-of-contents)
+  ##### public key: (Q) in ECDSA
 
-#### Exercise Key to Address
+        - is a point on the elliptic curve that is derived from the private key.
+        - an equation for an elliptic curve and a point that lies on that curve.
 
-- public key: cryptographic key that can be used by anyone to encrypt a message.
-- address: a unique identifier that represents a user on the blockchain.
+- Website certificate contains two things:
+  - identity information (who owns the website, which domains the certificate is valid for, etc.)
+  - public key(public half of a key pair, the site owner controls and keeps secret the associated private key)
 
-- `address (sharing, interaction) > public key (verification, security) > private key (ownership, access)`
+## SSL (Secure Sockets Layer)
 
-- Bitcoin Transformation:
+- a standard security technology for establishing an encrypted link between a web server and a browser (two servers).
+- prevents hackers from seeing or stealing any information transferred, including personal information, credit card numbers, etc.
 
-  - Checksum and Base58 Encoding: Bitcoin addresses are derived from the public key, followed by a double hash (SHA-256 and RIPEMD-160). A checksum is added for error detection, and Base58 encoding is used to make the address shorter and more user-friendly.
+## TLS (Transport Layer Security)
 
-- Ethereum Transformation:
+- a successor to SSL (Secure Sockets Layer) OR updated version of SSL.
+- a cryptographic protocol that provides secure communication over a computer network.
+- used to secure web browsers, email, instant messaging, and voice over IP (VoIP).
 
-  - Keccak Hash and Last 20 Bytes: In Ethereum, the transformation process is simpler:
-    - The public key is hashed using the Keccak-256 function.
-    - The last 20 bytes of this hash form the Ethereum address.
+## HTTPS (Hypertext Transfer Protocol Secure)
 
-- `In both Bitcoin and Ethereum, the public key is distinct from the address. This separation adds an extra layer of privacy and security. The public key is not immediately visible, so an attacker would need the private key to forge a signature. The address is a simplified representation used for sending and receiving transactions. In blockchain, addresses are easier to share and interact with, while public keys are used for verification and security.`
-
-- keccak hash function:
-  - cryptographic hash function that converts an input (of any length) into a fixed-size output (256 bits).
-  - used in Ethereum to hash the public key and generate the address.
+- an extension of HTTP (Hypertext Transfer Protocol) that is used for secure communication over a computer network.
+- appears in the URL when a website is secured by an SSL/TLS certificate.
+- Users can view the certificate details to verify the website's authenticity, including the certificate authority that issued it by clicking on the padlock icon in the address bar.
 
 [Back to Top](#table-of-contents)
 
@@ -1162,8 +1338,7 @@ Cryptography is the art and science of securing communication so that only the i
 - [P versus NP problem](https://en.wikipedia.org/wiki/P_versus_NP_problem)
 - [RSA (cryptosystem)](<https://en.wikipedia.org/wiki/RSA_(cryptosystem)>)
 - [Elliptic Curve Digital Signature Algorithm](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
+- [Ethereum-Cryptography-JS](https://github.com/ethereum/js-ethereum-cryptography)
+- [ECDSA: Elliptic Curve Signatures](https://cryptobook.nakov.com/digital-signatures/ecdsa-sign-verify-messages)
 
 [Back to Top](#table-of-contents)
-
-an education and migration consultancy based in Sydney. offer all education and visa-related services such as college/university enrolment, career counselling, visa consultation and processing, AAT representation and Ministerial Intervention requests and so on. Engaging us means you will be guided with a highly experienced and qualified professional team at every step of your journey to Australian education and permanent residency.
-At Navigate Visa and Education, very concerned about your future. Having gone through a similar life journey, understand the grievances of international students and the wider migrant community. share a common bond and similar sentiments. You will be handled by a highly professional and qualified team with a proven track record of excellent customer service.
