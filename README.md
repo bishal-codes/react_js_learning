@@ -12,6 +12,7 @@ This repository contains a collection of resources for frontend developers prepa
     - [CSS Properties](#css-properties)
   - [JavaScript](#javascript)
     - [DOM Properties](#dom-properties)
+    - [JSON vs JavaScript Object](#json-vs-javascript-object)
   - [Project 1 - Create a simple calculator](#simple-calculator)
 - [Frontend Frameworks/Libraries](#frontend-frameworks-libraries)
   - [Vite.js](#vitejs)
@@ -22,6 +23,7 @@ This repository contains a collection of resources for frontend developers prepa
   - [Waterfall Model - Software Development Life Cycle](#waterfall-model)
   - [Agile Model - Software Development Life Cycle](#agile-model)
 - [Architecture](#architecture)
+- [Creating Server](#creating-server)
 - [Data Structures and Algorithms](#data-structures-and-algorithms)
   - [Big O Notation](#big-o-notation)
     - [O(1)](#o1)
@@ -305,6 +307,114 @@ Before you start with frontend development, you need to understand the basics of
 
 [Back to Top](#table-of-contents)
 
+### JSON vs JavaScript Object
+
+- `JSON`: JavaScript Object Notation.
+
+  - a lightweight data-interchange format.
+  - based on syntax of JavaScript Object.
+  - used for representing and exchanging structured data across different platforms, typically in web APIs or when sending data between a server and a web application.
+  - is a string representation of an object.
+  - its syntax is stricter than JavaScript object syntax.
+  - only supports basic data types: string, number, boolean, null, array, and object.
+  - key must be a string that can be serialized (converted to a string) or deserialized (parsed back into a JavaScript object), and enclosed in double quotes.
+  - cannot contain functions, undefined, or, date objects, or trailing commas.
+  - static and used for communication, data storage and configuration purposes.
+
+  ```json
+  {
+    "name": "John",
+    "age": 30,
+    "isStudent": true,
+    "subjects": ["Maths", "Science"],
+    "address": {
+      "city": "New York",
+      "state": "NY"
+    }
+  }
+  ```
+
+- `JavaScript Object`: a collection of key-value pairs.
+
+  - a data structure that can hold various types of values like strings, numbers, booleans, arrays, objects, and functions.
+  - fundamental data structure in JavaScript.
+  - used to store data in key-value pairs.
+  - can contain functions, undefined, date objects, and trailing commas, non-JSON data types.
+  - dynamic and used for data manipulation and computation purposes.
+  - property name does not need to be enclosed in double quotes.
+
+  ```javascript
+  const jsObject = {
+    name: "Bishal",
+    age: 21,
+    greet: function () {
+      // Functions are allowed
+      console.log("Hello!");
+    },
+    isActive: true, // Boolean values are supported
+    friends: undefined, // `undefined` is allowed
+  };
+  ```
+
+### Spread Operator in JavaScript (ES6) - `...`
+
+- `Spread Operator`: an operator that allows an iterable to expand in places where 0+ arguments are expected.
+
+  - used to expand elements of an iterable (like an array or object) into places where multiple elements are expected.
+  - used to copy an array or object.
+  - used to merge two or more arrays or objects.
+  - used to pass elements of an array as arguments to a function.
+
+  ```javascript
+  const arr1 = [1, 2, 3];
+  const arr2 = [4, 5, 6];
+  const mergedArray = [...arr1, ...arr2]; // [1, 2, 3, 4, 5, 6]
+  ```
+
+  ```javascript
+  const obj1 = { name: "John" };
+  const obj2 = { age: 30 };
+  const mergedObject = { ...obj1, ...obj2 }; // { name: "John", age: 30 }
+  ```
+
+  ```javascript
+  const arr = [1, 2, 3];
+  const sum = (a, b, c) => a + b + c;
+  const result = sum(...arr); // 6
+  ```
+
+[Back to Top](#table-of-contents)
+
+### Rest Operator in JavaScript (ES6) - `...`
+
+- `Rest Operator`: an operator that allows a function to accept an indefinite number of arguments as an array.
+
+  - used to represent an indefinite number of arguments as an array.
+  - used to collect all the remaining arguments into an array.
+  - used to pass a variable number of arguments to a function.
+
+  ```javascript
+  const sum = (...args) => {
+    return args.reduce((acc, curr) => acc + curr, 0);
+  };
+
+  sum(1, 2, 3, 4, 5); // 15
+  ```
+
+```js
+const user = {
+  name: "John",
+  age: 30,
+  email: "john@gmail.com",
+};
+
+const { name, ...rest } = user;
+console.log(name); // John
+console.log(rest); // { age: 30, email: "john@gmail.com" }
+```
+
+[Back to Top](#table-of-contents)
+
 ### Simple Calculator
 
 - learn HTML, CSS, and JavaScript by creating a simple calculator.
@@ -331,6 +441,7 @@ Before you start with frontend development, you need to understand the basics of
 - Example: First, you gather all requirements, then you design the system, and once the design is fixed, you move on to coding, etc.
 - It consists of a series of phases that help in the development of software applications.
 - In the industry, you may find Waterfall in older or more traditional companies, but it’s becoming less common because it lacks flexibility.
+
   - Requirements Gathering
   - Planning
   - Design
@@ -338,7 +449,9 @@ Before you start with frontend development, you need to understand the basics of
   - Testing
   - Deployment
   - Maintenance
+
 - Requirements Gathering
+
   - defined by Project/Product Manager, Business Analyst, and Stakeholders.
   - In start-up companies, the CEO or CTO may also be involved in defining the requirements.
   - the first phase of the SDLC.
@@ -347,24 +460,31 @@ Before you start with frontend development, you need to understand the basics of
   - Planning
   - PM along with designers work together to plan the project.
   - The project manager creates a project plan that includes the scope, timeline, budget, and resources required for the project.
+
 - Design
+
   - defined by the Solution Architect, Technical Architect, and Designers. [Senior Engineer/Engineering Manager]
   - the design phase of the SDLC.
   - involves designing the architecture of the software application.
   - the design phase includes creating the high-level design, low-level design, and database design of the software application.
   - tech stack, architecture, and design patterns are decided in this phase.
+
 - Development
+
   - defined by the Software Engineer, Frontend Engineer, Backend Engineer, and Full Stack Engineer. [SDE I, SDE II, SDE III]
   - the development phase of the SDLC.
   - involves writing the code for the software application.
   - the development phase includes coding, testing, and debugging the software application.
   - the developers write the code according to the design specifications.
+
 - Testing
+
   - defined by the Quality Assurance Engineer, Test Engineer, and QA Lead. [QA Engineer, QA Lead, SDET]
   - the testing phase of the SDLC.
   - involves testing the software application to ensure that it meets the requirements.
   - the testing phase includes unit testing, integration testing, system testing, and user acceptance testing.
   - the testers test the software application for bugs, errors, and defects.
+
 - Deployment
   - defined by the DevOps Engineer, Site Reliability Engineer, and Deployment Engineer. [DevOps Engineer, SRE]
   - the deployment phase of the SDLC.
@@ -461,6 +581,93 @@ Before you start with frontend development, you need to understand the basics of
 3. Serverless Architecture
 
 - a cloud computing execution model in which a cloud provider runs the server, and dynamically manages the allocation of machine resources.
+
+[Back to Top](#table-of-contents)
+
+# Creating Server
+
+> npm init -y > npm install express > touch server.js > node server.js
+
+- To create a server, you need to install Node.js and npm on your machine.
+
+1. **Create a new directory**
+
+   - Create a new directory for your project.
+   - To create a new directory, run the following command in your terminal:
+
+     ```bash
+         mkdir server
+     ```
+
+   - Replace `server` with the name of your project.
+
+2. **Navigate to the project directory**
+
+   - Navigate to the project directory.
+   - To navigate to the project directory, run the following command in your terminal:
+
+     ```bash
+         cd server
+     ```
+
+   - Replace `server` with the name of your project.
+
+3. **Initialize the project**
+
+   - Initialize the project with npm.
+   - To initialize the project with npm, run the following command in your terminal:
+
+     ```bash
+         npm init -y
+     ```
+
+     - This will create a `package.json` file in your project directory.
+
+4. **Install Express.js**
+
+   - Express.js is a web application framework for Node.js.
+   - To install Express.js, run the following command in your terminal:
+
+     ```bash
+         npm install express
+     ```
+
+5. **Create a server file**
+
+   - Create a new file called `server.js` in the root directory of your project.
+   - To create a new file, run the following command in your terminal:
+
+     ```bash
+         touch server.js
+     ```
+
+6. **Write server code**
+
+   - Write the following code in the `server.js` file:
+
+     ```javascript
+     const express = require("express");
+     const app = express();
+     const port = 3000;
+
+     app.get("/", (req, res) => {
+       res.send("Hello, World!");
+     });
+
+     app.listen(port, () => {
+       console.log(`Server is running on http://localhost:${port}`);
+     });
+     ```
+
+7. **Start the server**
+
+   - To start the server, run the following command in your terminal:
+
+     ```bash
+         node server.js
+     ```
+
+   - This will start the server and print the message `Server is running on http://localhost:3000`.
 
 ### Vite.js
 
