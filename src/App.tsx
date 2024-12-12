@@ -20,7 +20,7 @@ async function getProducts() {
   }
 }
 
-const ThemeContext = createContext<"light" | "dark">("light");
+const ThemeContext = createContext<themeProps>("light");
 
 function App() {
   const [products, setProducts] = useState<ProductResponse[] | undefined>(
